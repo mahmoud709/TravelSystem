@@ -1,0 +1,18 @@
+.cardTitle{
+    font-family: var(--subtitle-font-name);
+    color: #ee6e6e;
+    font-size: 1.5rem;
+}
+.cardImg{
+    background-color: var(--secondary-color);
+    width: 80px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.serviceList{
+    border-right: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}

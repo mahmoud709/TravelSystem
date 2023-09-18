@@ -1,0 +1,12 @@
+.bgBanner{
+    background: url(../../assets/images/tour.AVIF);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+.bgBanner>div{
+    height: inherit;
+}
+a:hover{
+    color: var(--secondary-color) !important;
+}

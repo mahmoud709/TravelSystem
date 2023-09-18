@@ -1,0 +1,21 @@
+.vh-60{
+    height: 60vh;
+}
+.title {
+    width: max-content;
+}
+.spe_color {
+    color: var(--secondary-color);
+}
+.Homevideo video,
+.HomeImg img {
+    object-fit: cover;
+    height: 350px;
+}
+.searchIcon i{
+    background-color: var(--secondary-color);
+    align-self: center;
+}
+.cursorPointer{
+    cursor: pointer;
+}
