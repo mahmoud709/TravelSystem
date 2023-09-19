@@ -2,7 +2,7 @@ export const handleErr=(err)=>{
     return{
         success:false,
         message:'error occured while doing this operation',
-        data:err,
+        data:err.message
     }
 }
 export const handleSuccess=(data)=>{

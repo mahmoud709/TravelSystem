@@ -51,12 +51,11 @@ export const deleteTour=async(req,res)=>{
 }
 // get all Tours
 export const gatallTours=async(req,res)=>{
-    const query=req.query;
-    const limit=query.limit;
-    const page=query.page;
+    const {limit,page}=req.query;
     const skip=(page-1)*limit;
+
     try{
-        const allTours=await Tour.find({}).limit(limit).skip(skip);
+        const allTours=await Tour.find({}).limit(limit).skip(skip)
         res.status(statusCodes.successCode).json(handleSuccess(allTours));
     }
     catch(err){
