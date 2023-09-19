@@ -8,8 +8,15 @@ dotenv.config({ path: "./config.env" });
 import compression from 'compression';
 
 // Connect to DB
-mongoose.connect(`${process.env.DBCONNECTIONURL}`);
-
+const connectDB=async()=>{
+    try{
+        await mongoose.connect(`${process.env.DBCONNECTIONURL}`);
+        console.log('MongoDB connected')
+    }
+    catch(err){
+        console.log(err)
+    }
+}
 const app=express();
 // Middlewares
 app.use(cors());
@@ -21,7 +28,8 @@ app.use('/',route);
 app.all('*', (req, res) => {
     res.send('This route Not found in server')
 })
-app.listen(process.env.PORT,()=>{
-    console.log(process.env.DBCONNECTIONURL)
-    console.log(`App is running on https://localhost${process.env.PORT}`);
+connectDB().then(()=>{
+    app.listen(process.env.PORT, () => {
+        console.log(`App is running on https://localhost${process.env.PORT}`);
+    })
 })
