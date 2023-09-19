@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import route from "./routes/routes.js";
 dotenv.config({ path: "./config.env" });
+import compression from 'compression';
+
 // Connect to DB
 mongoose.connect(process.env.DBCONNECTIONURL);
 
@@ -13,6 +15,7 @@ const app=express();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+app.use(compression())
 app.use('/',route);
 
 app.all('*', (req, res) => {
