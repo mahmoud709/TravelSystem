@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 export const signup = async (req, res) => {
     const { username, email, password, photo } = req.body;
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(process.env.SECRET_KEY, salt);
+    const hash = bcrypt.hashSync(`${process.env.SECRET_KEY}`, salt);
     const existEmail=await User.findOne({email});
     try {
             if(existEmail){

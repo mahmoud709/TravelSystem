@@ -8,7 +8,7 @@ dotenv.config({ path: "./config.env" });
 import compression from 'compression';
 
 // Connect to DB
-mongoose.connect(process.env.DBCONNECTIONURL);
+mongoose.connect(`${process.env.DBCONNECTIONURL}`);
 
 const app=express();
 // Middlewares
@@ -22,5 +22,6 @@ app.all('*', (req, res) => {
     res.send('This route Not found in server')
 })
 app.listen(process.env.PORT,()=>{
+    console.log(process.env.DBCONNECTIONURL)
     console.log(`App is running on https://localhost${process.env.PORT}`);
 })
