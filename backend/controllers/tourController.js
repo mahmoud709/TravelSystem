@@ -2,6 +2,7 @@ import Tour from '../models/Tour.js';
 import { handleErr,handleSuccess,statusCodes} from '../utils/handleError.js';
 // Create New Tour
 export const createTour=async(req,res)=>{
+    console.log(req.user.role)
     try{
         const newTour=await Tour.create(req.body);
         res.status(statusCodes.successCode).json(handleSuccess(newTour));
@@ -28,7 +29,7 @@ export const updateTour=async(req,res)=>{
 export const getSingleTour=async(req,res)=>{
     const { id } = req.params;
     try{
-        const singleTour=await Tour.findById(id);
+        const singleTour = await Tour.findById(id).populate('reviews');
         if(!singleTour){
             return  res.status(404).json({ success: false, message:'No tour found'});
         }
@@ -53,16 +54,16 @@ export const deleteTour=async(req,res)=>{
 export const gatallTours=async(req,res)=>{
     const {limit,page}=req.query;
     const skip=(page-1)*limit;
-    try{
-        const allTours=await Tour.find().limit(limit).skip(skip)
-        res.status(statusCodes.successCode).json(handleSuccess(allTours));
-    }
+        try {
+            const allTours = await Tour.find({}).populate('reviews').limit(limit).skip(skip)
+            res.status(statusCodes.successCode).json(handleSuccess(allTours)); 
+        
+        }
     catch(err){
         res.status(statusCodes.errCode).json(handleErr(err));
     }
 }
 // Search by city
-
 export const handleSearch = async (req, res) => {
     const tourTitle = req.query.title;
     const Title = new RegExp(tourTitle, 'i');
