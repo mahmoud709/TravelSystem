@@ -7,7 +7,7 @@ export default function Testimonial(props) {
                 <p className='py-2 w-75 text-muted'>{props.text}</p>
                 <div className="personalInfo d-flex align-items-center">
                     <div className='image'>
-                        <img src={props.img} alt={props.alt} width={60} style={{ borderRadius: '10px' }} />
+                        <img src={props.img} alt={props.alt} loading='lazy' width={60} style={{ borderRadius: '10px' }} />
                     </div>
                     <div className="contentInfo ms-3">
                         <p>{props.name}</p>

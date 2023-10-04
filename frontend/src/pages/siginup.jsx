@@ -55,7 +55,7 @@ export default function Siginup() {
       <div className="container-fluid h-custom">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
-            <img src={signupImg} className="img-fluid" alt="signupImage" />
+            <img src={signupImg} className="img-fluid" alt="signupImage" loading='lazy' />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4">
             <form onSubmit={handleSummit}>

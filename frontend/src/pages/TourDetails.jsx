@@ -26,7 +26,7 @@ export default function TourDetails() {
       <div className="row">
         <div className="col-md-8">
           <div className="Image">
-            <img src={photo} alt={title} className='w-100 rounded' />
+            <img src={photo} alt={title} className='w-100 rounded' loading='lazy' />
           </div>
           <div className="card my-3 p-3 description">
             <div className="descTitle">

@@ -18,7 +18,7 @@ export default function Home() {
           <div className="col-md-6">
             <div className="title flex ">
               <p className='section__subtitle'><i>Know Befor you go</i></p>
-              <img src={worldImg} alt='worldImg' width={40} className='mb-2' />
+              <img src={worldImg} alt='worldImg' loading='lazy' width={40} className='mb-2' />
             </div>
             <div className="contentHeader">
               <h2>Traveling opens the door <br /> to creating <span className='spe_color'>memories</span></h2>

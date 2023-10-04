@@ -29,7 +29,7 @@ export default function Experience() {
             </div>
             <div className="col-md-5">
                 <div className="experienceImg ">
-                    <img src={experienceImg} alt="experience img" className='w-100' />
+                    <img src={experienceImg} alt="experience img" className='w-100' loading='lazy'/>
                 </div>
             </div>
         </section>

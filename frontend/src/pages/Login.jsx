@@ -46,6 +46,7 @@ export default function Login() {
               src={loginImg}
               className="img-fluid"
               alt="loginImage"
+              loading='lazy'
             />
           </div>
           <div className="col-md-6 px-3">

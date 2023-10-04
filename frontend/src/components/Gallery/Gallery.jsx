@@ -29,7 +29,7 @@ export default function Gallery() {
             <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 3, 992: 4 }}>
                 <Masonry gutter='1rem'>
                     {galleryImages.map((el, index) => (
-                        <img src={el} alt={'galleryImage'+index} className='galleryImg cursorPointer' key={index} style={{ display: 'block', borderRadius: '10px' }} />
+                        <img src={el} alt={'galleryImage' + index} loading='lazy' className='galleryImg cursorPointer' key={index} style={{ display: 'block', borderRadius: '10px' }} />
                     ))}
                 </Masonry>
             </ResponsiveMasonry>
