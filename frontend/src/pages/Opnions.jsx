@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from '../assets/images/avatar.jpg'
+import avatar from '../assets/images/avatar.AVIF'
 export default function Opnions() {
     return (
         <section>

@@ -8,6 +8,8 @@ import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+
 import TourContextProvider from "./context/ToursContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -1,5 +1,5 @@
 import React from 'react'
-import touristImage from '../../assets/images/male-tourist.png';
+import touristImage from '../../assets/images/male-tourist.AVIF';
 import { Link } from 'react-router-dom';
 export default function Banner() {
   return (

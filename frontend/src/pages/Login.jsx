@@ -1,7 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import loginImg from '../assets/images/login.png'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import loginImg from '../assets/images/login.AVIF'
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
+
 export default function Login() {
+  const navigate = useNavigate();
+
+    const [validateForm, setValidate] = useState({})
+    const notify = () => toast.error(validateForm, {
+      position: "top-left",
+    });
+    const [loginData, setloginData] = useState({
+      email: '',
+      password: ''
+    });
+    function takeUserData(e) {
+      const userData = { ...loginData };
+      userData[e.target.name] = e.target.value;
+      setloginData(userData);
+    }
+    async function sendData() {
+      try{
+        await axios.post('http://localhost:5000/signin', loginData);
+        navigate('/home');
+      }
+      catch(err){
+        if (!err.response.data.success){
+          setValidate(err.response.data.message);
+          notify();
+        }
+      }
+    }
+  function handleSubmit(e) {
+      e.preventDefault();
+        sendData();
+    }
+  
   return (
     <section className="row">
       <div className="container-fluid h-custom">
@@ -10,11 +45,11 @@ export default function Login() {
             <img
               src={loginImg}
               className="img-fluid"
-              alt="signupImage"
+              alt="loginImage"
             />
           </div>
-          <div className="col-md-8 col-lg-6 col-xl-4">
-            <form>
+          <div className="col-md-6 px-3">
+            <form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="email">
                   Email
@@ -25,6 +60,7 @@ export default function Login() {
                   className="form-control form-control-lg"
                   placeholder="Enter your email"
                   name="email"
+                  onChange={takeUserData}
                 />
               </div>
               <div className="form-outline mb-3">
@@ -37,6 +73,7 @@ export default function Login() {
                   className="form-control form-control-lg "
                   placeholder="Enter password"
                   name="password"
+                  onChange={takeUserData}
                 />
               </div>
               <div className="text-start mt-4 pt-2">
@@ -46,9 +83,10 @@ export default function Login() {
                 >
                   Login
                 </button>
+                <ToastContainer />
                 <p className="small fw-bold mb-3 fs-6">
                   Don't have an account?{" "}
-                  <Link to="/signup" className="mainColor">
+                  <Link to="/login" className="mainColor">
                     register
                   </Link>
                 </p>

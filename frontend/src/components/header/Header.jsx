@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.AVIF";
 import "./Header.css";
 export default function Header() {
   return (
@@ -26,7 +26,7 @@ export default function Header() {
               <Link
                 className="nav-link active fw-bold"
                 aria-current="page"
-                to="/"
+                to="/home"
               >
                 Home
               </Link>
@@ -52,7 +52,7 @@ export default function Header() {
           {/* <!-- Login & Register --> */}
           <div className="nav_right ">
             <div className="btns ">
-              <Link to="/signin">
+              <Link to="/">
               <button className="btn secondary__btn">
                 Login
               </button>

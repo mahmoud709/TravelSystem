@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 export const signup = async (req, res) => {
-    const { username, email, password, photo } = req.body;
+    const { username,phone ,email, password, photo } = req.body;
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
     const existEmail=await User.findOne({email});
@@ -12,7 +12,7 @@ export const signup = async (req, res) => {
         if(existEmail){
             return res.status(statusCodes.errCode).json({success:false,message:'Email is exist,try onther one'});
         }
-        const newUser = await User.create({ username, email, password: hash, photo })
+        const newUser = await User.create({ username,phone ,email, password: hash, photo })
         res.status(statusCodes.successCode).json(handleSuccess(newUser));
     }
     catch (err) {

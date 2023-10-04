@@ -1,6 +1,6 @@
 import React from 'react'
 import './experience.css';
-import experienceImg from '../../assets/images/experience.png'
+import experienceImg from '../../assets/images/experience.AVIF'
 export default function Experience() {
     return (
         <section className='row my-5 container mx-auto'>

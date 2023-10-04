@@ -2,9 +2,9 @@ import React from 'react'
 import ServicesBox from '../ServicesBox/ServicesBox'
 import Slider from 'react-slick'
 import Testimonial from './Testimonial'
-import personalImg1 from '../../assets/images/ava-1.jpg'
-import personalImg2 from '../../assets/images/ava-2.jpg'
-import personalImg3 from '../../assets/images/ava-3.jpg'
+import personalImg1 from '../../assets/images/ava-1.AVIF'
+import personalImg2 from '../../assets/images/ava-2.AVIF'
+import personalImg3 from '../../assets/images/ava-3.AVIF'
 export default function Review() {
     var settings = {
         dots: true,

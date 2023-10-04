@@ -1,8 +1,8 @@
 import React from 'react'
 import './Services.css'
-import weatherImg from '../../assets/images/weather.png';
-import tourGuide from '../../assets/images/guide.png';
-import customizeImg from '../../assets/images/customization.png';
+import weatherImg from '../../assets/images/weather.AVIF';
+import tourGuide from '../../assets/images/guide.AVIF';
+import customizeImg from '../../assets/images/customization.AVIF';
 import ServicesBox from '../ServicesBox/ServicesBox';
 
 

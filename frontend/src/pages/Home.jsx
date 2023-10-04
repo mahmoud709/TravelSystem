@@ -1,8 +1,8 @@
 import React from 'react'
 import './Home.css';
-import worldImg from '../assets/images/world.png';
-import hereImg1 from '../assets/images/hero-img01.jpg';
-import hereImg12 from '../assets/images/hero-img02.jpg';
+import worldImg from '../assets/images/world.AVIF';
+import hereImg1 from '../assets/images/hero-img01.AVIF';
+import hereImg12 from '../assets/images/hero-img02.AVIF';
 import video from '../assets/images/hero-video.mp4';
 import Services from '../components/Services/Services';
 import Tours from './Tours';

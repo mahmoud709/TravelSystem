@@ -6,7 +6,7 @@ import { createReview, getAllReviews } from '../controllers/reviewController.js'
 
 const route = Router();
 
-route.post('/dashboard/create', verifyAdmin, createTour);
+route.post('/dashboard/create', createTour);
 route.post('/signup', signup);
 route.post('/signin', signin);
 
